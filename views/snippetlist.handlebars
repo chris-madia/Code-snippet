@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="/style.css">
+
+<header class="header_bar">
+  <nav class="navigation">
+      <a class="button" href="/">Profile</a>
+      <a class="button" href="/snippetlist">My Snippet's</a>
+      <a class="button" href="/addsnippet">New Snippet</a>
+      <a href="/logout">Logout</a>
+  </nav>
+</header>
+
+<h1>My Snippet's</h1>
+
+<form class="search_form" action="/search" method="get">
+  <input class="search" type="text" name="snippets">
+  <button id="search_button">Search</button>
+</form>
+
+<div class="welcome">
+
+    <a class="button" href="/addsnippet">New Snippet</a>
+
+</div>
+
+<table class="snippet_table" border="1">
+  <tr>
+    <th>
+      Title
+    </th>
+    <th>
+      Date
+    </th>
+    <th>
+      Language
+    </th>
+    <th>
+      Body
+    </th>
+    <th>
+      Notes
+    </th>
+    <th>
+      Tags
+    </th>
+    <th>
+      Delete
+    </th>
+  </tr>
+</br>
+
+  {{#snippet}}
+  <tr>
+    <td><a href="/addSnippet?id={{_id}}">{{title}}</a></td>
+    <td>{{date}}</td>
+    <td>{{language}}</td>
+    <td>{{body}}</td>
+    <td>{{notes}}</td>
+    <td>{{tags}}</td>
+    <td><a href="/deleteSnippet/?id={{_id}}">Delete</a></td>
+  </tr>
+  {{/snippet}}
+
+</table>

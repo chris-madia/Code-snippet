@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/styles.css">
+
+<h1> Welcome to Code Snippet </h1>
+
+<div class="login-page">
+
+  <div class="form">
+
+    <form class="data_form" action="/loginForm" method="post" autocomplete="off">
+      <input type="text" name="username" placeholder="Username"/>
+      <input type="password" name="password" placeholder="Password"/>
+      <button type="submit">Login</button>
+
+      <p class="message">Not registered? <a href="/register">Create an account</a></p>
+
+    </form>
+
+    <div class="failure">
+      {{#if failed}}
+      Login failed!
+      {{/if}}
+    </div>
+
+  </div>
+
+</div>

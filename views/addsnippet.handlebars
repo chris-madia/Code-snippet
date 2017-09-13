@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/styles.css">
+<header class="header_bar">
+  <nav class="navigation">
+      <a class="button" href="/">Profile</a>
+      <a class="button" href="/snippetlist">My Snippet's</a>
+      <a class="button" href="/addsnippet">New Snippet</a>
+      <a class="button" href="/logout">Logout</a>
+  </nav>
+</header>
+
+<h1>Add a Snippet</h1>
+
+<div class="form">
+<form class="data_form" action="/saveSnippet" method="post">
+  <input type="text" id="title" name="title" value="{{snippet.title}}" placeholder="Title" />
+  <div class="fieldError">{{errors.title.message}}</div>
+  <br />
+
+  <input type="text" id="date" name="date" value="{{snippet.date}}" placeholder="Date" />
+  <div class="fieldError">{{errors.date.message}}</div>
+  <br />
+
+  <input type="text" id="language" name="language" value="{{snippet.language}}" placeholder="Language" />
+  <div class="fieldError">{{errors.language.message}}</div>
+  <br />
+
+  <textarea rows="5" cols="5" id="text_body" name="body" value="{{snippet.body}}" placeholder="Insert Code Snippet Here"></textarea>
+  <div class="fieldError">{{errors.body.message}}</div>
+  <br />
+
+  <input type="textarea" id="notes" name="notes" value="{{club.materials}}" placeholder="Notes (Optional)" />
+  <div class="fieldError">{{errors.notes.message}}</div>
+  <br />
+
+  <input type="text" id="tags" name="tags" value="{{snippet.tags}}" placeholder="Tags" />
+  <div class="fieldError">{{errors.tags.message}}</div>
+  <br />
+
+  {{#if snippet._id}}
+    <input type="hidden" name="id" value="{{snippet._id}}" />
+  {{/if}}
+
+  <button class="button-primary">Save Snippet</button>
+</form>

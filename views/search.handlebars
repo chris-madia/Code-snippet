@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+<header class="header_bar">
+    <nav class="navigation">
+        <a ckass="button" href="/">Profile</a>
+        <a class="button" href="/snippetlist">My Snippet's</a>
+        <a class="button" href="/addsnippet">New Snippet</a>
+        <a class="button" href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="results_form">
+
+<div class="search_box">
+<form class="search_form" action="/search" method="get">
+
+  <input class="search" type="text" name="snippets">
+
+  <button id="search_button">Search</button>
+
+</form>
+</div>
+
+<h3>Results from your search:</h3>
+
+<div class="form" id="snippets">
+  {{#snippets}}
+      <a href="/addsnippet?id={{ _id }}">
+      <p class="title">{{title}}</p>
+    </a>
+  {{/snippets}}
+
+</div>
+</div>
+</body>
+
+</html>
